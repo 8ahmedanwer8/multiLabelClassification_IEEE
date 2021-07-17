@@ -1,2 +1,10 @@
-# multilabelclassification_IEEE
-A machine learning problem that I was emailed. It was held by the IEEE Computational Intelligence Society and target undergraduate and graduate students.
+# A beginner's approach at a multilabel classification problem
+This is the work I did a couple days ago for a multilabel classification problem. It was a little contest sort of thing held by the IEEE and CIS which are basically some organizations for engineering and com-sci. They provided an anonymous dataset which I'm pretty sure means that there is no context or meaning given for the data. It's just a bunch of numbers in a dataframe. 
+
+This made the data a little bit hard to process later on. But it's a 42 feature dataset with two labels and about 260,000 samples from both train.csv and test.csv. One was multiclass and mutually-exlusive while the other was a binary class. Previously, I worked on a multiclass image classification model, so my skills from that transferred over. However, I still learned a lot of new things here such as using the functional API for Keras and how to think about solving a multilabel problem and evaluating it. It's obvious from the imports in the python files, but I'll restate that I used keras, scikit-learn, matplotlib, numpy and pandas libraries. I think these are pretty standard for every problem though.
+
+I also had to write a report for the entire process. I may attach that report later, but for now I don't want to regurgitate what I had on there. Now for the performance of the model: let's just say I was happy to have it working... 
+
+Basically, the model was good at predicting the binary class label, but not very good with the multiclass label. I tried everything for both label's predictions to be optimal but I just couldn't figure out why the model was inaccurate with the multiclass label. In fact, when I made the switch from having a single output head sequential model to using the functional API for a dual output head, my results were almost the same. I had about 80% accuracy for the binary class and 43% at best for the multiclass. In any case, I couldn't dwell on it any longer so I moved forward to the model evaluation using hamming loss and exact match ratio. 
+
+
